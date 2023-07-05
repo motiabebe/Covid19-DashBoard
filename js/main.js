@@ -10,8 +10,7 @@ const stateCode = document.querySelector('#stateCode');
 const dateSelector = document.querySelector('#dateSelector');
 const viewStatesDaily = document.querySelector('#viewStatesDaily')
 
-// ChartID [0]
-// Chart to compare yesterday's data to today's data use bar chart
+// Chart to compare yesterday's data to today's data
 Highcharts.chart('compareContainer', {
     chart: {
         type: 'bar'
@@ -77,7 +76,7 @@ const daysComparsion = async () => {
     
 }
 
-// Chart to view by State
+// Chart to view cases in a state
 Highcharts.chart('stateContainer', {
     chart: {
         type: 'column'
@@ -167,7 +166,7 @@ stateCode.onchange = async () => {
     hideLoadingSpinner();
 }
 
-// State Cases By Date
+// Chart to view daily cases in a state
 Highcharts.chart('viewStatesDailyContainer', {
     chart: {
         type: 'column'
@@ -261,7 +260,7 @@ viewStatesDaily.onclick = async () => {
     hideLoadingSpinner();
 };
 
-// Chart to view by Date
+// Chart to view daily cases in the US
 Highcharts.chart('dateContainer', {
     chart: {
         plotBackgroundColor: null,
@@ -369,12 +368,6 @@ const getDashboardData = async () => {
 }
 
 const setDashboardData = (dashboardData) => {
-
-    const compareChart = Highcharts.charts[0]
-
-    compareChart.series[0].setData([
-        
-    ])
 
     const totalCases = document.querySelector('#totalCases').textContent = dashboardData.data[0].cases.total.value;
     const totalHospitalized = document.querySelector('#totalHospitalized').textContent = dashboardData.data[0].outcomes.hospitalized.currently.value;
