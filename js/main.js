@@ -384,7 +384,7 @@ const setDashboardData = (dashboardData) => {
     hideLoadingSpinner();
 }  
 
-// getDashboardData()
+getDashboardData()
 
 daysComparsion()
 
