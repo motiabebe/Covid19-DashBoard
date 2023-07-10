@@ -1,3 +1,20 @@
+// Check if the user is on a mobile device
+if (window.innerWidth < 1000) {
+    const notAvailableOnMobile = document.querySelector('#notAvailableOnMobile');
+    notAvailableOnMobile.classList.remove('d-none');
+}
+window.addEventListener('resize', () => {
+    if (window.innerWidth < 1000) {
+        const notAvailableOnMobile = document.querySelector('#notAvailableOnMobile');
+        notAvailableOnMobile.classList.remove('d-none');
+    } else if (window.innerWidth > 1000) {
+        const notAvailableOnMobile = document.querySelector('#notAvailableOnMobile');
+        notAvailableOnMobile.classList.add('d-none');
+    }
+});
+
+
+
 const loadingSpinner = document.querySelector('#loadingSpinner');
 const showLoadingSpinner = () => {
     loadingSpinner.classList.remove('d-none');
